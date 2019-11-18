@@ -16,6 +16,7 @@ from .serializers import *
 def login(request):
     data = request.data
     data.pop('type')
+    print(data)
     serializer = LoginSerializer(data=data, context={'request': request})
     if not serializer.is_valid():
         return Response({'error': 'blank username or password'}, status=401)
