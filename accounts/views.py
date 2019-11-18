@@ -23,4 +23,5 @@ def login(request):
         return Response({'error': 'Incorrect username or password'}, status=401)
     serializer = UserLoginSerializer(user)
     data = serializer.data
+    print(data)
     return Response(data)
